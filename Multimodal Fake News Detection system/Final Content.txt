@@ -1,0 +1,407 @@
+CHAPTER 1 – INTRODUCTION
+1.1 BACKGROUND
+
+The rapid growth of social media platforms such as X (Twitter), Reddit, and Instagram has fundamentally transformed the way information is created, shared, and consumed. Unlike traditional media, where information dissemination was controlled and verified through editorial processes, modern digital platforms enable instantaneous global communication, allowing millions of users to publish content in real time. While this accessibility enhances information flow, it has also led to the widespread propagation of fake news—misleading or false information presented as factual—which poses serious threats to public trust, societal stability, and decision-making processes.
+
+Historically, fake news detection relied on manual fact-checking performed by journalists, editors, and independent verification organizations. This process involved validating claims, cross-checking sources, and comparing information with trusted references. However, with the exponential increase in user-generated content, manual verification has become impractical due to the scale, speed, and diversity of data.
+
+Early computational approaches focused primarily on text-based fake news detection, utilizing machine learning algorithms such as Logistic Regression, Support Vector Machines (SVM), and Naïve Bayes combined with feature engineering techniques like Bag-of-Words and TF-IDF. While these methods provided baseline performance, they were limited in capturing contextual semantics and complex misinformation patterns.
+
+Subsequent advancements introduced deep learning models, including Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks, which improved the modeling of sequential and contextual dependencies in text. More recently, transformer-based models such as BERT, RoBERTa, and Sentence-BERT have significantly enhanced natural language understanding by learning contextual embeddings, enabling state-of-the-art performance in various NLP tasks.
+
+Despite these advancements, a major limitation remains: most models rely heavily on learned patterns from training data and lack the ability to verify factual correctness using external knowledge. As a result, they often fail when encountering unseen or real-world claims that require evidence-based validation. Additionally, modern fake news is inherently multimodal, combining textual narratives with images that may be misleading, manipulated, or taken out of context, further increasing detection complexity.
+
+To address these challenges, recent research has shifted toward multimodal and evidence-based frameworks, which integrate textual understanding, visual consistency analysis, and external knowledge retrieval to improve both accuracy and interpretability.
+
+1.1.1 Evolution of Fake News Detection Techniques
+
+Fake news detection has evolved through multiple stages, beginning with traditional machine learning approaches that relied on handcrafted textual features. These early methods were computationally efficient but limited in capturing deep semantic relationships. The introduction of deep learning enabled models to automatically learn complex patterns from data, improving performance on structured datasets.
+
+The emergence of transformer-based architectures marked a significant breakthrough, allowing models to understand contextual meaning more effectively. However, these models remain largely correlation-based, learning statistical relationships rather than verifying factual correctness. Consequently, their generalization to real-world scenarios remains limited.
+
+1.1.2 Emergence of Multimodal and Evidence-Based Approaches
+
+With the increasing use of images alongside textual content in social media, research has expanded to multimodal fake news detection, where both text and visual information are jointly analyzed. Models such as CLIP enable the measurement of semantic alignment between text and images, helping identify inconsistencies that may indicate misinformation.
+
+Furthermore, retrieval-augmented approaches (RAG) have been introduced to incorporate external knowledge sources such as Wikipedia and fact-checking databases. By retrieving relevant evidence and verifying claims using Natural Language Inference (NLI), these systems move beyond pattern recognition toward fact-based reasoning.
+
+The integration of multimodal analysis and evidence retrieval represents a significant step toward building more reliable and interpretable fake news detection systems.
+
+1.2 MOTIVATION
+
+The motivation for this project arises from the increasing sophistication and impact of fake news in modern digital ecosystems. Unlike traditional misinformation, contemporary fake news often combines misleading textual claims with manipulated or contextually irrelevant images, making it more convincing and difficult to detect.
+
+Existing detection systems face several critical limitations. Many models rely solely on textual analysis and fail to consider visual content, while others focus on multimodal correlations without verifying the factual correctness of claims. Additionally, most deep learning models operate as black-box systems, providing predictions without transparent explanations, which reduces user trust and limits practical applicability.
+
+Another key challenge is the inability of traditional models to handle new and unseen claims. Models trained on labeled datasets often perform well on known data but fail in real-world scenarios where verification requires external evidence. Large language models improve reasoning capabilities but are prone to hallucinations when not grounded in reliable information sources.
+
+This project is motivated by the need to develop a robust, explainable, and evidence-driven fake news detection system that:
+
+Combines textual and visual analysis,
+Verifies claims using external knowledge sources,
+Provides interpretable outputs with supporting evidence.
+
+Such a system aligns with current research trends in multimodal learning, retrieval-augmented systems, and explainable AI, while also addressing real-world challenges in misinformation detection.
+
+1.3 SCOPE OF THE PROJECT
+
+The scope of this project focuses on the design and implementation of an evidence-guided multimodal fake news detection system capable of analyzing both textual and visual content from social media posts.
+
+Included in Scope
+Processing textual claims using semantic embedding techniques (Sentence-BERT).
+Evaluating image–text consistency using a vision-language model (CLIP).
+Retrieving external evidence from knowledge sources such as Wikipedia using FAISS-based similarity search.
+Verifying claims using Natural Language Inference (NLI) to determine support or contradiction.
+Integrating multimodal and evidence-based features through a feature fusion mechanism.
+Classifying news as fake or real using a supervised model (LightGBM).
+Providing explainable outputs, including confidence scores, retrieved evidence, and reasoning.
+Excluded from Scope
+Real-time large-scale data crawling from social media platforms.
+Video-based or audio-based misinformation detection.
+Multilingual fake news detection.
+Social network propagation analysis using graph-based models.
+Full-scale production deployment.
+Limitations
+The system depends on the availability and quality of external evidence sources.
+Performance may vary for highly ambiguous or emerging claims with limited supporting data.
+Computational constraints limit large-scale experimentation on very large datasets.
+
+
+
+Chapter 2 :
+Literature review:
+Early Studies for the detection on the false news often mostly used
+in textual analysis with the traditional ML methods where
+numerous researches assessed performance based on these
+conventional methods used such as Random Forests, SVM,
+Logistic Regression and Naïve bayes used with TF-IDF inclusions
+manually created linguistic characteristics. Convolutional neural
+networks can work better than traditional methods earlier I
+mentioned on some datasets, although both these methods are still
+fully supervised and restricted to certain text data, according to
+comparative evaluations [1]. Similar results were reported on
+NLP-driven False news detection on investigating the usage of
+TF-IDF and Bag of Words featuring with standard Classifiers,
+reaching on competitive performance and being sensitive on
+dataset- specific patterns and on feature engineering decisions [2].
+Similar Investigations which are explored under Lightweight ML
+pipelines combining TF-IDF representations with Linear treebased classifiers highlighting the computations efficiency with the
+ease of deployment [3]. As Deep learning progressed, hybrid
+architectures that combined sequential models are contextual
+embeddings were developed to enhance the semantic compression
+of news content. Specifically, BERT-CNN-BiLSTM. By
+capturing temporal and contextual dependencies within the text,
+architectures showed enhanced classification performance [4].
+Recent research has increasingly concentrated more on multimodal
+fake news detection modelling both text and visual data in order to
+overcome the challenges came in text-only approaches.
+Multimodal frameworks actually design by combining CNN-based
+textual encoders and BERT- based by capturing the crosse model
+signals, image extractors that has been demonstrated to enhance
+the performance when it is compared to unimodal base lines [5]. In
+order to get more accurately model correlations between the text
+and images additional research investigated with multimodal
+interaction using unsupervised feature fusion techniques [6].
+Numerous studies have looked into this semi supervised learning
+techniques to take advantage of vast amounts of unlabeled content
+because labeled fake news data is scarce. To Propagate this
+similarity graphs are created using this textual embeddings, graphbased semi supervised frameworks have been proposed, showing
+the performance on detection which can be accomplished with
+smaller number of labeled samples [7].
+In order to better utilize unlabeled data to subsequent studies
+expanded on this approach by using CNN in semi supervised
+learning environments [8].
+To detect fake news, recent research directly modelled using
+image-text alignment using CLIP-based representations. By
+calculating similarity scores, CLIP-based frameworks showed
+efficacy in detecting inconsistencies between textual and
+visual content between modalities [9]. In order to spread
+credibility labels throughout the social or content-based
+graphs, more recent research combining semi-supervised
+learning and graph neural networks, demonstrating enhanced
+robustness under minimal supervision [10].
+
+2.2 RESEARCH GAP
+
+Although significant progress has been made in fake news detection, several critical limitations still exist in current approaches:
+
+1. Most existing models rely heavily on textual information, ignoring the role of visual content, which is often used to mislead users in social media platforms.
+2. Multimodal approaches focus mainly on learning correlations between text and images but do not verify factual correctness using external evidence.
+3. Existing systems rarely incorporate external knowledge sources such as encyclopedic databases or fact-checking repositories for validating claims.
+4. Many deep learning models operate as black-box systems, providing predictions without interpretable reasoning or supporting evidence.
+5. Large language model-based approaches improve reasoning capabilities but are prone to hallucinations when not grounded in structured evidence retrieval mechanisms.
+
+These gaps highlight the need for a system that not only detects fake news using multimodal data but also verifies claims through external evidence and provides explainable outputs.
+
+2.3 OBJECTIVES
+To develop a multimodal fake news detection system that analyzes both textual and visual data to identify inconsistencies between text and images.
+To incorporate an evidence-guided verification mechanism that retrieves supporting information from external knowledge sources and evaluates claim credibility using Natural Language Inference (NLI), while enabling reasoning for new inputs.
+To design a feature fusion strategy that integrates textual embeddings, image–text alignment scores, and evidence verification signals into a unified representation for improved classification performance.
+To provide interpretable predictions by presenting supporting or contradicting evidence, enabling users to understand the reasoning behind the classification results.
+
+2.4 PROBLEM STATEMENT
+The way we share news online has changed everything, but it’s also made it way too easy for fake news to go viral. Today misinformation is not just a lie in a text post but often a combination of misleading words and edited or out-of-context photos to trick us. This is a big problem as it destroys public trust and can even lead to chaos in real life. Most of the tools we have today are not enough to stop it. Some just look at the words and ignore the pictures. And others just look for patterns but don't actually check if the facts are true. Even the latest AI models sometimes “hallucinate,” making up their own facts instead of hunting down real evidence.
+
+Another big problem is that most detection systems are like a “black box” - they tell you something is fake but never explain “Why”. This makes them difficult to work with for people like journalists or government officials who need to see the proof. Fake news is always changing, and we don’t have enough labelled data to build perfect systems. We need a new approach. The project proposes a new and smarter system that takes into account both text and images. It doesn’t just guess, it actually goes out and finds real world evidence and explains its reasoning in a way that humans can understand. The goal is to make social media safer and more honest by providing a tool that is reliable, clear and ready.
+
+Fake news spreads easily on social media because misleading stories are combined with edited pictures. For example, someone might upload a real picture of a natural disaster, but then claim that it is happening now in another city to incite panic. “Current AI tools often miss this because they might look at the text but ignore the picture, or they might flag it as “fake” without explaining why. This project builds a system that acts as a digital detective; it would see a photo, find the original source online and tell you that it is actually from five years ago. By giving this kind of evidence, the system helps people see exactly how they are being misled.
+
+2.5 PROJECT PLAN
+
+The project was carried out in multiple phases to ensure systematic development and evaluation of the proposed system.
+
+Phases of Development
+Problem Analysis and Literature Study
+Understanding existing approaches, identifying research gaps, and defining project objectives.
+Dataset Collection and Preprocessing
+Collecting the FakeReddit dataset, cleaning textual data, and preparing image inputs for processing.
+Feature Extraction
+Text embeddings using Sentence-BERT
+Image–text alignment using CLIP
+Evidence retrieval using SBERT + FAISS
+Model Development
+Evidence verification using NLI (BART-Large-MNLI)
+Feature fusion and classification using LightGBM
+Model Evaluation
+Conducting experiments including model comparison and ablation studies using metrics such as accuracy, precision, recall, and F1-score.
+System Implementation
+Developing a Streamlit-based interface to demonstrate real-time fake news detection with explanation and evidence.
+Result Analysis and Documentation
+Analyzing performance and preparing the final report and research paper.
+
+
+CHAPTER 3 – TECHNICAL SPECIFICATION
+3.1 FEASIBILITY STUDY
+3.1.1 Technical Feasibility
+
+The proposed system is technically feasible as it is built entirely using well-established machine learning frameworks and pretrained models. The implementation leverages Sentence-BERT for semantic text embeddings, CLIP for image–text alignment, and FAISS for efficient vector-based retrieval. These components are integrated with a lightweight classification model (LightGBM), enabling efficient training and inference without requiring large-scale computational infrastructure.
+
+The use of pretrained transformer models significantly reduces the need for extensive training resources, as the system relies on transfer learning rather than building models from scratch. The modular design of the pipeline allows each component—text processing, image analysis, evidence retrieval, and classification—to function independently and be integrated seamlessly.
+
+Additionally, the system is developed and executed in a cloud-based environment (Google Colab), ensuring accessibility and scalability. GPU acceleration can be utilized for faster computation when available, but the system remains functional in CPU-based environments, making it suitable for academic and research applications.
+
+3.1.2 Social Feasibility
+
+The system addresses a critical societal challenge by providing an automated mechanism to identify and analyze fake news. The increasing spread of misinformation on digital platforms has raised concerns regarding public awareness, trust, and decision-making. By incorporating evidence-based verification and explainability, the proposed system enhances transparency and allows users to understand the reasoning behind predictions.
+
+The framework can be beneficial for journalists, researchers, and general users by assisting in verifying the credibility of online information. Unlike conventional systems that only provide classification outputs, this system supports informed decision-making by presenting supporting or contradicting evidence, thereby promoting responsible information consumption.
+
+3.2 SYSTEM SPECIFICATION
+3.2.1 Software Specification
+
+The system is implemented using a combination of machine learning libraries, deep learning frameworks, and data processing tools, each serving a specific role within the pipeline:
+
+Google Colab – Used as the primary environment for development, model training, and experimentation, providing GPU support and easy integration with external libraries.
+PyTorch – Utilized for loading and executing deep learning models such as CLIP and transformer-based components, enabling efficient tensor operations.
+Sentence-Transformers (SBERT) – Used to generate contextual sentence embeddings for textual inputs and for semantic similarity-based evidence retrieval.
+Hugging Face Transformers – Provides access to pretrained models, including BART-Large-MNLI for Natural Language Inference used in evidence verification.
+CLIP (Contrastive Language–Image Pretraining) – Applied to compute similarity between textual claims and associated images by embedding them into a shared feature space.
+FAISS (Facebook AI Similarity Search) – Enables efficient indexing and retrieval of semantically similar documents from the external evidence corpus.
+LightGBM – Used as the final classification model for predicting fake or real labels based on fused multimodal features.
+Scikit-learn – Employed for data preprocessing, feature scaling, model evaluation, and performance metric computation.
+Pandas and NumPy – Used for data handling, preprocessing, and numerical computations during feature integration.
+Matplotlib – Used for generating evaluation visualizations such as accuracy comparison plots and ROC curves.
+Streamlit – Used to develop an interactive user interface for real-time fake news verification, displaying predictions, evidence, and explanations.
+3.2.2 Hardware Specification
+
+The system is designed to operate on standard computing environments without requiring specialized hardware. Development and experimentation are performed on cloud-based platforms such as Google Colab, which provide optional GPU acceleration.
+
+Typical hardware configuration includes:
+
+Processor: Intel i5/i7 or equivalent
+RAM: Minimum 8 GB (16 GB recommended for smooth execution)
+Storage: At least 10–20 GB for datasets, models, and intermediate outputs
+GPU (Optional): NVIDIA GPU (e.g., T4 or L4 in Colab) for faster model inference
+
+The system remains functional in CPU-only environments, although GPU support improves performance during embedding generation and model execution. This ensures accessibility for academic use without dependence on high-end hardware resources.
+
+
+Use Case Diagram – Explanation (3 Points)
+The use case diagram represents the interaction between the user and the fake news detection system, where the user provides input in the form of text and optional image data.
+The system processes the request through the “Verify News” functionality, which internally includes prediction, evidence retrieval, and explanation generation.
+The output is presented to the user as prediction (fake/real), supporting evidence, and explanation, ensuring both usability and interpretability of the system.
+✅ Data Flow Diagram – Explanation (3 Points)
+The data flow diagram illustrates how input data (text and image) is processed through different stages including feature extraction (SBERT + CLIP), evidence retrieval (RAG), and feature fusion.
+The system retrieves supporting information from an external knowledge base and combines it with extracted features to improve decision-making.
+The final output is generated through the LightGBM classifier and LLM explainability layer, providing prediction along with evidence and reasoning to the user.
+
+
+CHAPTER4 - SYSTEM DESIGN:
+4.2 DESIGN:
+
+Activity Diagram – Explanation
+An activity diagram has been provided below to illustrate how the entire system executes from a user input to the completion of the final output after feature extraction, evidence retrieval, classification and finally producing an output based upon the results obtained from the previous actions.
+
+It demonstrates how the process commenced with user input, progressed through feature extraction, supported by evidence retrieval (to validate evidence from the examples in sections 2.1 and 2.2), classified as either ‘fake’ or ‘real’, and generated an explanation, all while displaying the extent to which all previous processes affect all other future steps in sequence.
+✅ Class Diagram – Explanation
+1. The class diagram provides an overview of the different types of modules comprising the system. Each class in the class diagram corresponds to a specific functional module of the system (e.g., text encoding, images processing, evidence retrieval, and classification). 
+2. The class diagram also demonstrates how the modules function together logically, e.g. how data flows from input handling, through feature extraction, and finally to prediction and explanation). As such, the system has been designed to utilize a modular design and be easy to scale. 
+3. Because the different classes separate responsibilities within the system (e.g., TextEncoder, RAGModule, ExplainabilityModule), the system is easily maintained and has the flexibility needed to allow one of the components (e.g., the TextEncoder) to be changed or updated, without impacting the rest of the system
+
+✅ Sequence Diagram – Explanation
+
+1. A diagram of how the system's parts work together over time (the sequence diagram) shows the chain of events that occur when a user inputs data into the system across the three modules; encoding, retrieval, and classification. 2. It shows how message exchanges occur with each module and how the embedding, evidence, and feature representations are passed from one module to the next until the system predicts an outcome. The last few steps of the sequence diagram show how the system moves become generating a prediction to generating an explanation about that prediction to the user. 
+3.As a result, the user receives not just a decision from the system, but also a decision that has been supported with reasoning and evidence retrieved by the system.
+project plan:
+
+The main thing on what this system focus on instead of preparing an Traditional approaches that totally rely only on text data and algorithms it also add the multimodal approach, detecting the consistency and alignment between the text and its image associated with and both independently by proposing an evidence-guided multimodal framework on Multimodal information of news ensuring not only finding the News is True or Fake but also ensuring that why this answer
+particularly is been True or not by finding the external sources connected to that news to verify and then bring back the solution of informing why the system performed and on what basis as a proof for this factual information and defining both textual and visual content to go through this retrieved evidence system and later help the system to grow on such for any new news that Large language model helps so that it can bring the new derived reasoning on performance of the Machine learning Classification Model we used and helping to design an Proper RAG which has capability of working and storing external sources with FAISS Search and then verifying its credibility of the Claim is received with NLI model to access this documents and find the external evidence on the dataset.
+
+We have used and to get the evidence score as proof and with Classification training to generate the accuracy of the working Model which may look like simple but when this model brings the output the LLM inference Layer helps the RAG system and the classifier to use this both in order to generate an perfect Explainability feature with the new inputs and new claim where LLM reasoning helps on the focusing on generating output which is accessed on External Knowledgeable sources from RAG system and later verifying using its API as addition on working with Classifier and helps to generate the humanreadable explanations and later explains its purpose of influencing the classification decision and explaining the reason behind this prediction and also giving the evidence using verified claims and also API modules
+
+Functional requirements:
+
+The system is designed to consume multimodal input, whereby users can provide textual claims with associated visual content for analysis.
+It should capture the intent of the claim through contextual embedding techniques, transforming raw textual data into meaningful semantic representations.
+The framework is expected to judge the consistency between textual and visual modalities by computing alignment scores that measure semantic consistency between them.
+We require an evidence retrieval mechanism that can query external knowledge sources to retrieve relevant supporting information for the context.
+The system should verify the factual consistency by examining the correlation between the claim and the retrieved evidence.
+It has to combine multimodal and evidence-based features into a single representation for decision making.
+The system should generate a final judgement of the credibility of the input, with evidence to back the judgement.
+
+We expect that a combination of multimodal and evidence-based signals will provide a high level of predictive reliability of the system.
+It should have good computational performance, i.e. it should be able to handle moderately large datasets within a reasonable time.
+The design should be scalable, such that it can be extended to real-time or large-scale deployment scenarios.
+The usability is emphasised by a simple and interactive interface which makes it easier for users to interpret the results and supporting evidence.
+The system should be transparent, providing clear explanations of its predictions, thereby increasing user confidence.
+It should be portable to standard computing environments with optional support for GPU acceleration for improved performance.
+It should be robust to handle noisy, incomplete or ambiguous inputs without significant loss of performance.
+
+
+
+Techincal Feasbility:
+
+The proposed system is technically feasible to implement as it relies on existing, well-supported machine learning frameworks and pretrained models. The approach does not start from scratch but uses existing components such as Sentence-BERT for text understanding, CLIP for visual analysis, and transformer-based models for inference, which makes the development process easier. The system is computationally manageable while providing good performance, thanks to the use of FAISS for efficient retrieval and LightGBM for classification. In addition, the whole pipeline can run on environments like Google Colab with optional GPU support for faster processing. This makes the system accessible and feasible within common academic resources without special infrastructure.
+
+The project is a relevant and growing problem in society: how to properly identify false social media posts. With so much misinformation online – especially in audio and visual formats combined – it is very difficult for a user to determine what content is legitimate versus what is false. This project helps solve that issue and includes not only a way to identify potentially false information, but will also provide the evidence and rationale for its decision. The project will make the system more relevant in the real-world by allowing users to see the rationales behind each prediction. By providing more support for identifying trustworthy information, the project may help to improve digital literacy and responsible communication.
+
+
+
+PyTorch is the dedicated backend for running deep learning models like CLIP and transformer-based elements in a computationally efficient manner.
+
+HuggingFace Transformers (Sentence-BERT, BART-MNLI) enable contextual sentence-to-text embeddings generation and natural language inference for evidence validation purposes.
+
+CLIP (Contrastive Language-Image Pre-training) enables multimodal analysis by quantifying the similarity of textual assertions with respective photo(s).
+
+FAISS (Facebook AI Similarity Search) provides the means to create efficient vector indexes and rapidly retrieve evidence from external knowledge-base sources.
+
+LightGBM is the final classifier that learns the relationship between the multi-modal signals and assigns a value of false or true to a news story.
+
+Scikit-learn includes features for data processing, normalizing of features, splitting dataset, and evaluating results (accuracy and F1-score).
+
+Streamlit provides an interactive interface for testing out the system using new product inputs and visualizing predictions with evidence and rationale.
+
+Google Colab is the working environment where development and execution occur, as well as cloud-based services and optional GPU capabilities.
+
+
+1 The use case diagram depicts how the user and the fake news detection system interact with input being provided by the end user in the form of text and optionally an image.
+2. The user is able to process their request via the system through the Verify News function which consists of a prediction stage followed by retrieving evidence and producing an explanation.
+3. The system will return the output prediction (fake or real) plus evidence supporting that decision and an explanation as well, to provide both usability and interpretability of the system. 
+
+1. The data flow diagram depicts the process flow of the input data (text and image) through several stages: Feature extraction via SBERT while performing feature extraction via CLIP, Evidence retrieval through RAG, and Feature Fusion. 
+2. The system will retrieve supportive evidence from an external knowledge base that it will then use to combine with extracted features for improved decision-making on evidence by applying those features to the item in question.
+3. The final output will be generated through a LightGBM classifier and the LLM explainability layer to provide the user with a prediction and supportive evidence and/or reasoning.
+
+
+
+This proposed architecture is a sequential approach to identifying fake news by assessing three main criteria: a textual analysis, a visual evaluation, and an evidential or logical basis for supporting the statement presented. The example of a social media posting containing text content and an image showing similar information is shown in the figure. The text content is passed through a Sentence-BERT encoder to create dense semantic embeddings (contextual meaning is not captured by simple keywords) of the input. Simultaneously, the image is processed with a CLIP encoder, which takes the visual content and projects it into the same semantic space as the text so that the system can determine if the image provides meaningful support of the statement made. Once both the textual and visual stream have been completed, they converge into the RAG (Retrieval-Augumented Generation) module, where the textual embeddings serve as queries to retrieve relevant information from an external knowledge base using FAISS-based vector search. This places factual grounding into the system by introducing actual evidence from the real world, not learned patterns.
+
+After retrieved evidence is evaluated through the calculation of an evidence consistency score to indicate the extent to which the external evidence supports or contradicts the original claim, the evidenced consistency score, the retrieved text embedding of the evidence, and the image-text alignment score will all be used to create a comprehensive integrated representation of the input during the feature fusion stage. The fused features will be inputted to a LightGBM classifier to learn complex decision boundaries associated with the evidence inputs and to produce a final prediction (fake/real) regarding whether the news is fake or real. Finally, the prediction will be processed by an LLM-based explanation layer, which will provide a human-readable justification based on the retrieved evidence. For example, if an original claim states that a public figure made an alleged controversial statement with an unrelated image, the system will detect the inconsistency between the text and the image and will retrieve factual sources based on the claim (that support or refute it), leading to the most likely prediction of "Fake" along with excerpts of evidence provided and with a clearly articulated explanation of why the classification was made in order to enhance the interpretability of the prediction. This end-to-end design provides a multimodal understanding of a news story/claim along with verifiable reasoning beyond the traditional black-box classification model, thus providing the user with confidence in the accuracy and trust of the system for real-world use cases.
+
+
+
+
+
+1. Textual Semantic Representation:
+Text content on social media which is the main source of claims is processed first using Sentence-BERT that help to obtain semantic embeddings. It is designed in a way that it can capture the semantic relationships between the words and phrases by encoding these claims into the dense embeddings so that system work effectively in representing the text data.
+2. Image-Text Consistency analysis: Where we say the text is important as it is used as claim
+related to text data like image data are also very important to accurately represent its textual claim. So, this proposed framework defines the system with multimodal approach of combined data (Text + Image) correlatedly to incorporates the image and text verification. Generally, the text may be different and the associated image can be an Deep fake AI image that is totally fake so in order to relieve from this problem the visual content is extracted to CLIP image encoder in order to find the similarity between the text and image embedding where to compute whether the image supports the related text content or not to detect the consistency and inconsistency between both through this similarity score.
+3. Evidence Retrieval using RAG: Next step will be to verify the credibility of our claim here comes the Novelty part of using RAG so that the system can support the information from external sources to require the evidence documents related to dataset where the textual embedding is generated by SBERT is used as Query generation and FAISS Vector Search is used on providing the contextual information searched against an indexed evidence corpus to support the claim.
+4. Evidence Consistency Evaluation: This step generates an Evidence consistency score by verifying through NLI Model where this particular method represents a level of agreement based on the claim that is provided by RAG with evidence documents where this score helps whether the system is truly getting and generating information aligned to the external resources.
+5. Feature Fusion with Classification: From the previous models’ results are totally combined here to
+generate the Final output through combining all data results with evidence as the pipeline moves forward to combining and later on using this feature representation to be passed through LightGBM classifier which learns the data patterns associated with the data posts for predicting the real and fake news. Where this model promotes itself joining the LLM layer which helps the reasoning for making an better inference for explanations and later it is used on new inputs and recent news or old news which is given as new inputs later generated the final outputs by going through all this pipeline with external evidence verification from RAG for evidence grounded explanations to LLM generated human readable explanations explaining all and accessing the new inputs without any inconsistency and can easily accessed this system in dashboard interface used on to increase the quality of work and state of art by improving the reliability of fake news detection which provides evidence and explanations on claim in order to prove its predictions.
+
+
+
+
+The first phase in the pipeline involves using Sentence-BERT (SBERT) for extracting semantic representations from text. This type of model transforms input (news) headlines into dense vector embeddings, capturing contextual meaning instead of the frequency of occurring words.
+
+Working Method:
+An input sentence is tokenized, then a transformer-based encoder processes it.
+The all-mpnet-base-v2 model generates contextual embeddings.
+The output is the fixed-size (768 dimensions) vector representation that captures semantic similarity.
+
+Results of Implementation:
+Text Embedding Shape: (20000, 768)
+Advantages:
+Captures deep semantic meaning of text
+Allows for retrieval of similar items based on semantics (in RAG)
+Decreases reliance on hand-crafted features
+
+In order to add visual elements into the system, the CLIP model is used to determine how semantically consistent an image is with a piece of text.
+
+Working Method:
+Images and text are both encoded in to the same embedding space.
+A similarity score is calculated between the image and text representations.
+The higher the CLIP score, the stronger the alignment. Conversely, the lower the score, the more mismatch.
+
+Results of Implementation:
+CLIP Score Shape: (20000, 1)
+Advantages:
+Identifies misleading/unrelated pictures
+Effectively handles multimodal misinformation
+No task-specific training required for this model
+
+
+A Retrieval-Augmented Generation (RAG) process was created to confirm assertions by utilizing outside sources. This is accomplished via a FAISS system, which performs rapid similarity searches.
+How it works:
+Only factual news stories were used during the creation of the evidence corpus.
+Evidence is indexed in FAISS by using SBERT embeddings.
+For any provided input request, the top k matches are located based upon their vector proximity to each other.
+Results from implementing this process:
+Evidence Corpus Size: 12094 documents
+FAISS Index Created successfully
+Benefits of this process:
+Prevents circular logic through usage of actual data.
+Allows high-speed retrieval of large amounts of data.
+Provides factual grounding for predictions.
+
+
+After retrieving, the evidence will be run through a Natural Language Inference (NLI) model to verify if the claim has supporting evidence.
+How it works:
+Each claim/evidence pair goes to a BART-MNLI Model to receive probabilities/weights for Contradicting, Neutral or Supporting.
+Consistency Scores = Pcontradiction - Pentailment
+Positive value → Likely false news
+Negative value → Likely true news
+Results from implementing this process:
+RAG Score Shape = [20000 x 1]
+Benefits of this process:
+Provides logical verification of assertions.
+Decreases false positives.
+Provides an easy way to understand the predictions.
+
+
+
+The experiments were conducted so that it can be useful for evaluation when it is been compared with my combined feature fusion so it can be much more bring effectiveness for my proposed method on fake news detection framework and also based on the related works on how they have did the model comparisons so that to compare which each model and choosing their suitable model and related to what ML algorithm works better and suitable to work as classifier with using other pretrained models and efficient on those frameworks.
+
+Tabel 1 presents the comparison of various machine learning models and ensemble models trained using extracted multimodal feature representation. So, the evacuated models and these experiments are conducted where the results show the ensemble models are outperforming the traditional models both here based on observations LightGBM is been selected although XGBoost is also recommended LightGBM is slightly effective for high-dimensional tabular features as it will use histogram based gradient framework that handles large feature types and reduces complexity. And it is faster than other ensemble models in training and suitable for large scale datasets and lower memory usage
+
+The analyzation of the proposed Framework is also important as it is conducted on basis of some configurations like Text only, Text with CLIP, Text with RAG like that so that each component can be detect of how much intel we are gathered and also from staring the pipeline is built is in this manner where with each addition of every classification report is generated as progress are been slightly higher as going on where the text only improves classification performance where the multimodal aspects the CLIP and evidence retrieval is fully combined as we see progress is increased properly.
+ 
+
+
+This Proposed Architecture went under the training and evaluation using the Main dataset Fakeeddit Dataset containing multimodal data where the reddit posts are attached
+ 
+text associated with image where every instance the dataset indicates three primary components: a textual headline (Clean title), a corresponding URL of images (image URL) and a binary classification label(2_way_label) consists of the real (0) and fake (1) data. This provides an effective platform of using in a multimodal approach because it allows the visual content and textual semantic analysis.
+In this system for usage of dataset on training is been selected 20,000 samples randomly as an subset that provides computational efficiency because it will take more time and more storage and GPU to do operations like CLIP models and FAISS vector search mainly used on this data because of some broken URL’s the image gets blocked and it becomes very difficult to use more than 30,000 so here we selected this using a fixed random seed to ensure reproducibility.From the selected dataset 12,094 real news articles and using of Wikipedia FAISS corpus of 20,000 articles since the primary verified news are collected from dataset but for external resources for new inputs using the external knowledge repositories for fact check sites as Wikipedia to support the evidence-guided verification with LLM reasoning.
+
+
+Where fm(x) represents prediction of the mth decision tree and M denotes total number of trees in ensemble.
+
+
+The System combines Sentence-BERT embeddings, CLIP image-text alignment and RAG based evidence system working with LightGBM Classifier and LLM Reasoning access for Final prediction all this depicts the uniqueness on its own of using this models and showing them how this will support the fake news detection systems turning from ordinary to upgrading and improving the system with the evidence verification and multimodal approach where the proposed model achieves validation accuracy of 90.30% showing how well it improved compared to traditional methods. Supporting practical new instance and framework of explainable actions proving for giving a practical and scalable solution for improving misinformation detection on social media.
+
+Furthermore, the proposed framework can be improved by taking into account the time context of news events, and therefore help identify outdated or recontextualised content that has been reused to spread disinformation. One avenue for extensions to this framework is to include a user credibility and source reliability aspect, in which the framework will provide an assessment of the credibility of news sources or social media accounts to improve the decision-making process. 
+
+Additionally, the proposed framework can be extended to include cross-modal attention mechanisms that would enable more complex interactions between text and visual modalities than just simple fusion of features. With this approach, the proposed framework will be able to capture more subtle inconsistencies between the two modalities. Furthermore, by expanding the information retrieval function to support a wider range of structured knowledge graphs and verified fact-checking APIs, we will improve the quality of our factual grounding and reduce our reliance on limited datasets.
+

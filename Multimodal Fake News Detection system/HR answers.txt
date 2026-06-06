@@ -1,0 +1,159 @@
+Hello sir, Good Morning My Name is M. Hari Srinivas. Iam from Kurnool, Andhra Pradesh. My Father name is M. Raghuram he works as Senior agency manager in SBI Life Insurance and my mother name is Saritha she is a housewife. I had completed my B. Tech in G.Pullaiah college of engineering and Technology in computer science and engineering with specialization of Internet of Things. Iam currently pursuing M. Tech in VIT College, Vellore in cse(Big data analytics)  from all this years of academic knowledge I have gained a lot of interest and focused on different important subjects like DBMS, OS and I know the languages like Python, C and Java basics and I have learnt little bit of web design/front end where I have learnt HTML, CSS and Java script but later I keen more interest in Data science and ML with AI. after getting from B/tech to MTech I have been more exposed to practical learning and it really help me to focus on more of my interest of subjects and have done some really amazing projects like hybrid spatio temporal framework for early risk management and prediction of Floods and Landslides, Sentimental analysis on Social Media with Sarcasm, slang and Emoji Models, Evidence-guided multimodal fake news detection using text-image consistency and external knowledge. Iam very self motivated person and improved a lot in my soft skills chapter like communication and being confident and stay focus clam in pressure. in this time I have done few small internships but not that high and industrial level so iam very passionate and eager to work in an well sustained organization in order to gain experience of real world projects and I believe my hard work and dedication will improve the chance of me getting that experience so I can give my best to that organization very dedicatedly.
+
+
+
+
+MThree placement:
+
+mthree Graduate Recruitment - CP - Tech - 2026
+India
+mthree Gradate Recruitment Program: Tech Roles
+
+ 
+
+About Us:
+
+mthree gives you a foot in the door to your dream career!
+
+We’ve helped 4,000 people start careers in technology, banking and business. For graduates and anyone starting their career, you’ll start with 6-12 weeks of training at our Academy. Then you’ll join one of our clients for 12-24 months (we work with investment banks and other big companies in industries from healthcare to aviation to insurance).
+
+You’re supported by us throughout, with pay rises every 12 months and an online learning plan to develop your skills. Afterwards, the majority continue their career with the client.   
+
+At mthree, we believe in fairness from the start. We don’t lock you in with exit fees. You’ll never have to pay a thing.
+
+Join mthree to unlock your potential and go further than you thought possible.
+
+ 
+
+What you’ll do: 
+
+If successful, you’ll work with one of our clients as an mthree Alumni designing, building, testing, and maintaining scalable and stable off-the-shelf applications or custom-built technology solutions. Also, working with a global team, you’ll help support systems including algorithmic trading engines and regulatory reporting.
+
+ 
+
+What you need: 
+
+Degree in Computer Science, Technology, or related STEM subjects
+Academic aggregate of 60% or higher with no standing arrear
+Strong programming skills: Java/ Python/ C/ C++/ Others
+Competitive coding experience will be an added advantage
+Good troubleshooting and debugging skills
+Solid software engineering principles (data structures, OOPs, design patterns, multithreading)
+Understanding of the formal software development lifecycle (SDLC)
+Understanding of test-driven development
+ 
+
+How it works:
+
+Stage 1: Apply for the position
+Stage 2: Clear the first round of Aptitude & Coding assessment
+Stage 3: Clear communication Screening
+Stage 4: Clear Technical interview
+Stage 5: Clear Final interview
+Stage 6: Get selected to join the training for 6 - 12 weeks
+Stage 7: Clear end of training assessment/ discussion
+Stage 8: Get selected for your placement in a job role that most suits your competence
+ 
+
+What you’ll get:
+
+In-depth, interactive training in small classes with graduates like you. Our training is created and delivered by industry experts who know your field inside out
+Starting salary of INR 9.15 LPA with 12-monthly salary increases
+Ongoing training and support
+Valuable industry experience. Ultimately, a foot in the door to build your career in an in-demand niche
+ 
+
+Important information on Diversity
+
+We take great pride in celebrating the diversity of every individual who contributes to making mthree the company it is today and will be in the future.
+
+We value diversity both within mthree and with our partner companies, and we’re proud to provide an environment where all our colleagues can flourish by promoting a strong culture of equality and inclusion. We never want people to change - only add to the amazing mix of people that work for mthree.
+
+I know I’m still at the beginning of my career, so I don’t claim to know everything. But one thing about me is that whenever I get an opportunity to learn something, I put genuine effort into understanding it properly.
+
+Most of my learning came from building projects, making mistakes, debugging issues, and figuring things out step by step. That process made me more confident technically and also more patient while solving problems.
+
+I feel this role matches my personality because it is not only about coding — it also involves guiding students, communicating ideas clearly, and taking responsibility. I enjoy that kind of environment.
+
+I may come in as a fresher, but I’ll come with energy, consistency, and the mindset to improve quickly and contribute wherever I can.
+
+
+What attracted me to this role is that it feels more practical and impactful than a regular classroom teaching role.
+
+I like technology, but I also enjoy helping people understand things in a simpler way. During projects and team discussions, I realized I naturally enjoy explaining concepts, discussing solutions, and helping others when they get stuck.
+
+This role gives a combination of technical work, communication, mentorship, and continuous learning, which is something I genuinely see myself growing in.
+
+
+what is python?
+
+Skip to content
+Search 12,600+ of our books and courses
+
+
+Menu
+Profile
+Python Certification
+Introduction to Python
+What Is Python and What Are Some Common Uses in the Industry?
+Python is a general-purpose programming language known for its simplicity and ease of use. This ease of use has made Python the most popular programming language in modern times.
+
+Python is used in many fields like data science and machine learning, web development, scripting and automation, embedded systems, IoT, and much more.
+
+Python is the main language that most data scientist and machine learning engineers currently use. Libraries like Pandas and Numpy make data analysis less tedious, while others like Tensorflow and Scikit make machine learning and working with AI models much more accessible.
+
+In web development, Python frameworks like Django, FastAPI, and Flask let developers build scalable and secure back-end systems with minimal effort. Many social media platforms like Instagram and Pinterest use Python on the back-end.
+
+Cybersecurity professionals and ethical hackers use Python to detect vulnerabilities like malware and other viruses, build automated security scans, and analyze threats.
+
+Python runs well on microcomputers like the Raspberry Pi and MicroPython-compatible boards, so you can build all kinds of IoT projects like smart home devices, weather monitoring stations, and more.
+
+Python is widely used in DevOps for writing CI/CD scripts and managing infrastructure across development pipelines. It is also commonly used to build back-end services and internal APIs.
+
+In software testing, Python tools such as pytest are used to create reliable test suites, while system administrators rely on Python for server monitoring, log management, and system-level tasks.
+
+Finally, one of Python's biggest strengths is automation. You can write simple scripts to help you with repetitive tasks like extracting data from spreadsheets, sending emails, and working with files on your local machine.
+
+Libraries like Selenium and BeautifulSoup also make it easy to interact with websites, so you can scrape public data, automate tasks through a web UI, and even manage cloud deployments for your projects.
+
+As you can see, Python is a very powerful language, and yet, it's easy to learn. From simple automation scripts to large-scale, industrial-level applications, you can use Python for just about anything.
+
+Python is a great choice for anyone who wants to learn programming, regardless of what they choose to specialize in later.
+
+Questions
+
+Which libraries are commonly used for data analysis in Python?
+
+
+Pandas and NumPy
+
+TensorFlow and Scikit-learn
+
+React and Vue
+
+Django and Flask
+
+How is Python used in embedded systems and IoT?
+
+
+It powers game engines for VR development.
+
+It runs on microcomputers like Raspberry Pi and compatible boards.
+
+It is primarily used for designing UI components.
+
+It replaces low-level languages like C in all cases.
+
+Which Python frameworks are used in web development?
+
+
+React, Vue, Angular
+
+TensorFlow, PyTorch, Scikit-learn
+
+NumPy, Pandas, Matplotlib
+
+Django, FastAPI, Flask
+Check your answer
+Ask for Help
+Navigated to What Is Python and What Are Some Common Uses in the Industry?
